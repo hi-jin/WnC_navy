@@ -22,7 +22,7 @@ header {
     height: 60px;
     background-color: papayawhip;
     font-family: 'Black Han Sans', sans-serif;
-    font-size: xx-large;
+    font-size: 32px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -51,7 +51,7 @@ footer > p > a {
 .main-title {
     display: flex;
     flex-direction: column;
-    font-size: xxx-large;
+    font-size: 48px;
     font-family: 'Gaegu', cursive;
     padding-top:  30px;
 }
@@ -112,7 +112,7 @@ a:visited {
     flex-grow: 1;
     border: 1px solid gray;
     font-family: 'Gaegu', cursive;
-    font-size: x-large;
+    font-size: 24px;
     background-color: white;
     text-align: center;
 }
