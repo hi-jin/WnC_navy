@@ -32,10 +32,6 @@
             align-items: center;
         }
 
-        main {
-            background-color: seashell;
-        }
-
         @media (max-width: 700px) {
             main>div {
                 flex-direction: column;
@@ -49,8 +45,9 @@
         <header>
             아과다
         </header>
-        <span style="width: 100%;
-    background-color: papayawhip; padding-top: 30px; display: flex; flex-direction: column; align-items: center;">
+        <span
+            style="width: 100%;
+    background: linear-gradient(papayawhip, white); padding-top: 30px; display: flex; flex-direction: column; align-items: center;">
             <div class="main-title">
                 <p style="font-size: xxx-large;
             font-family: 'Gaegu', cursive;">우리는!</p>
