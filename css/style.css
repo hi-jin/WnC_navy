@@ -104,6 +104,19 @@ a:visited {
     flex-grow: 1;
 }
 
+.login-form > div > div {
+    display: flex;
+}
+
+.login-form > div > div > label {
+    flex-grow: 1;
+    border: 1px solid gray;
+    font-family: 'Gaegu', cursive;
+    font-size: x-large;
+    background-color: white;
+    text-align: center;
+}
+
 #modal{
     display:none;
     position:fixed; 

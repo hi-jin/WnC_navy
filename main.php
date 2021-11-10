@@ -24,8 +24,9 @@
             <div id='login-link'>로그인</div>
         </header>
         <main>
+            <!-- 로그인 팝업 -->
             <div id="modal"></div>
-            <div class="modal-con">
+            <div class="modal-con con1">
                 <div class='login-form con'>
                     <a href="javascript:;" class="close">X</a>
                     <div>
@@ -42,6 +43,27 @@
                     </div>
                 </div>
             </div>
+            <div class="modal-con con2">
+                <div class='login-form con con2'>
+                    <a href="javascript:;" class="close">X</a>
+                    <div>
+                        <input type="text" placeholder="아이디를 입력하세요.">
+                        <input type="password" placeholder="비밀번호를 입력하세요.">
+                        <div>
+                            <label><input type="checkbox" name='type' value='teacher' onclick="clickCheck(this)">
+                                선생님</label>
+                            <label><input type="checkbox" name='type' value='student' onclick="clickCheck(this)">
+                                학생</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button class='join-button'>
+                            <p style='font-size: x-large;'>회원가입</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 로그인 팝업 -->
         </main>
         <footer>
             <p style='font-size: x-large;'>contact us! <a href="crushed7@o.cnu.ac.kr">email</a> <a
@@ -55,16 +77,32 @@
     <script>
         $(document).ready(function () {
             $('#main-page-link').click(() => { location.href = "/" });
+
+            // 로그인 팝업
             $('#login-link').click(() => {
                 $("#modal").fadeIn(300);
-                $(".modal-con").fadeIn(300);
+                $(".con1").fadeIn(300);
+            });
+
+            $('.join-button').click(() => {
+                $("#modal").fadeIn(300);
+                $(".modal-con").fadeOut(300);
+                $(".con2").fadeIn(300);
             });
 
             $("#modal, .close").on('click', function () {
                 $("#modal").fadeOut(300);
                 $(".modal-con").fadeOut(300);
             });
+
         });
+
+        function clickCheck(target) {
+            document.querySelectorAll(`input[type=checkbox]`)
+                .forEach(el => el.checked = false);
+
+            target.checked = true;
+        }
     </script>
 </body>
 
