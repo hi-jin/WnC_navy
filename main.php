@@ -24,9 +24,28 @@
             <div id='login-link'>로그인</div>
         </header>
         <main>
+            <div id="modal"></div>
+            <div class="modal-con">
+                <div class='login-form con'>
+                    <a href="javascript:;" class="close">X</a>
+                    <div>
+                        <input type="text" placeholder="아이디를 입력하세요.">
+                        <input type="password" placeholder="비밀번호를 입력하세요.">
+                    </div>
+                    <div>
+                        <button class='login-button'>
+                            <p style='font-size: x-large;'>로그인</p>
+                        </button>
+                        <button class='join-button'>
+                            <p style='font-size: x-large;'>회원가입</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
-            <p style='font-size: x-large;'>contact us! <a href="crushed7@o.cnu.ac.kr">email</a> <a href="https://github.com/hi-jin/WnC_navy">github</a></p>
+            <p style='font-size: x-large;'>contact us! <a href="crushed7@o.cnu.ac.kr">email</a> <a
+                    href="https://github.com/hi-jin/WnC_navy">github</a></p>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -36,7 +55,15 @@
     <script>
         $(document).ready(function () {
             $('#main-page-link').click(() => { location.href = "/" });
-            $('#login-link').click(() => { location.href = "/login.php" });
+            $('#login-link').click(() => {
+                $("#modal").fadeIn(300);
+                $(".modal-con").fadeIn(300);
+            });
+
+            $("#modal, .close").on('click', function () {
+                $("#modal").fadeOut(300);
+                $(".modal-con").fadeOut(300);
+            });
         });
     </script>
 </body>
