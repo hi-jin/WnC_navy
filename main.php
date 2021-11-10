@@ -20,12 +20,13 @@
 <body>
     <div class="main-container">
         <header>
-            아과다
+            <div id='main-page-link'>아과다</div>
+            <div id='login-link'>로그인</div>
         </header>
         <main>
         </main>
         <footer>
-            <p style='font-size: x-large;'>contact us! <a href="">email</a> <a href="">github</a></p>
+            <p style='font-size: x-large;'>contact us! <a href="crushed7@o.cnu.ac.kr">email</a> <a href="https://github.com/hi-jin/WnC_navy">github</a></p>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -34,7 +35,8 @@
     <script src="/script/jquery-3.6.0.js"></script>
     <script>
         $(document).ready(function () {
-            $('header').click(() => { location.href = "/" });
+            $('#main-page-link').click(() => { location.href = "/" });
+            $('#login-link').click(() => { location.href = "/login.php" });
         });
     </script>
 </body>
