@@ -2,3 +2,18 @@
     margin: 0;
     padding: 0;
 }
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    border-bottom: 1px solid gray;
+    height: 100px;
+}
+
+footer {
+    border-top: 1px solid gray;
+    height: 100px;
+}
