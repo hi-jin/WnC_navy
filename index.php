@@ -87,11 +87,7 @@
     <script src="/script/jquery-3.6.0.js"></script>
     <script>
         $(document).ready(function () {
-            $('.item').hover(function () {
-                $(this).css('background-color', 'lightgrey');
-            }, function () {
-                $(this).css('background-color', 'transparent');
-            })
+            $('header').click(() => { location.href = "/" });
         });
     </script>
 </body>
