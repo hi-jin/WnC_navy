@@ -84,7 +84,7 @@
     <script src="/script/jquery-3.6.0.js"></script>
     <script>
         $(document).ready(function () {
-            $('header').click(() => { location.href = "/" });
+            $('#main-page-link').click(() => { location.href = "/" });
         });
     </script>
 </body>
