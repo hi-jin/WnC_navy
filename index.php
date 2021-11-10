@@ -42,7 +42,7 @@
 <body>
     <div class="main-container">
         <header>
-            아과다
+            <div id='main-page-link'>아과다</div>
         </header>
         <span
             style="width: 100%;
