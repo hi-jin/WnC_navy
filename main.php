@@ -31,6 +31,12 @@
                     <div>
                         <input type="text" placeholder="아이디를 입력하세요.">
                         <input type="password" placeholder="비밀번호를 입력하세요.">
+                        <div>
+                            <label><input type="checkbox" name='type' value='teacher' onclick="clickCheck(this)">
+                                선생님</label>
+                            <label><input type="checkbox" name='type' value='student' onclick="clickCheck(this)">
+                                학생</label>
+                        </div>
                     </div>
                     <div>
                         <button class='login-button'>

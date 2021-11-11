@@ -44,17 +44,15 @@
         <header>
             <div id='main-page-link'>아과다</div>
         </header>
-        <span
-            style="width: 100%;
-    background: linear-gradient(papayawhip, white); padding-top: 30px; display: flex; flex-direction: column; align-items: center;">
+        <span style="width: 100%;
+    background: papayawhip; padding-top: 40px; text-align: center;">
             <div class="main-title">
                 <p style="font-size: 48px;
             font-family: 'Gaegu', cursive;">우리는!</p>
                 <div>
                     <p><span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">아</span>무에게나</p>
                     <p><span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">과</span>외받지</p>
-                    <p>않는<span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">다</span>.
-                    </p>
+                    <p>않는<span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">다</span>.</p>
                 </div>
             </div>
         </span>
