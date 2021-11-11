@@ -101,9 +101,9 @@
             $('#login').click((e) => {
                 e.preventDefault();
 
-                let uid = $('.con2 > div > div > input[type="text"]').val()
-                let upw = $('.con2 > div > div > input[type="password"]').val()
-                let utype = join_type;
+                let uid = $('.con1 > div > div > input[type="text"]').val()
+                let upw = $('.con1 > div > div > input[type="password"]').val()
+                let utype = login_type;
 
                 $.ajax({
                     url: "/login.php",
@@ -114,7 +114,7 @@
                         utype: utype
                     },
                     success: (result) => {
-                        if (result == "회원가입이 완료되었습니다.") {
+                        if (result == "로그인 성공") {
                             location.href = "/main.php";
                         }
                         alert(result);
