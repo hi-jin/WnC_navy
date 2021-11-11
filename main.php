@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class='login-button'>
+                        <button id='login' class='login-button'>
                             <p style='font-size: 24px;'>로그인</p>
                         </button>
                         <button class='join-button'>
@@ -49,20 +49,20 @@
                 </div>
             </div>
             <div class="modal-con con2">
-                <div class='login-form con con2'>
+                <div class='login-form con'>
                     <a href="javascript:;" class="close">X</a>
                     <div>
                         <input type="text" placeholder="아이디를 입력하세요.">
                         <input type="password" placeholder="비밀번호를 입력하세요.">
                         <div>
-                            <label><input type="checkbox" name='type' value='teacher' onclick="clickCheck(this)">
+                            <label><input type="checkbox" name='type' value='teacher' onclick="clickCheck2(this)">
                                 선생님</label>
-                            <label><input type="checkbox" name='type' value='student' onclick="clickCheck(this)">
+                            <label><input type="checkbox" name='type' value='student' onclick="clickCheck2(this)">
                                 학생</label>
                         </div>
                     </div>
                     <div>
-                        <button class='join-button'>
+                        <button id='join' class='join-button'>
                             <p style='font-size: 24px;'>회원가입</p>
                         </button>
                     </div>
@@ -84,12 +84,13 @@
             $('#login-link').click(() => {
                 $("#modal").fadeIn(300);
                 $(".con1").fadeIn(300);
+                $(".con2").hide();
             });
 
             $('.join-button').click(() => {
-                $("#modal").fadeIn(300);
                 $(".modal-con").fadeOut(300);
                 $(".con2").fadeIn(300);
+                $(".con1").hide();
             });
 
             $("#modal, .close").on('click', function () {
@@ -97,12 +98,75 @@
                 $(".modal-con").fadeOut(300);
             });
 
+            $('#login').click((e) => {
+                e.preventDefault();
+
+                let uid = $('.con2 > div > div > input[type="text"]').val()
+                let upw = $('.con2 > div > div > input[type="password"]').val()
+                let utype = join_type;
+
+                $.ajax({
+                    url: "/login.php",
+                    type: "POST",
+                    data: {
+                        uid: uid,
+                        upw: upw,
+                        utype: utype
+                    },
+                    success: (result) => {
+                        if (result == "회원가입이 완료되었습니다.") {
+                            location.href = "/main.php";
+                        }
+                        alert(result);
+                    },
+                    error: (err) => {
+                        alert(err);
+                    }
+                });
+            });
+
+            $('#join').click((e) => {
+                e.preventDefault();
+
+                let uid = $('.con2 > div > div > input[type="text"]').val()
+                let upw = $('.con2 > div > div > input[type="password"]').val()
+                let utype = join_type;
+
+                $.ajax({
+                    url: "/join.php",
+                    type: "POST",
+                    data: {
+                        uid: uid,
+                        upw: upw,
+                        utype: utype
+                    },
+                    success: (result) => {
+                        if (result == "회원가입이 완료되었습니다.") {
+                            location.href = "/main.php";
+                        }
+                        alert(result);
+                    },
+                    error: (err) => {
+                        alert(err);
+                    }
+                });
+            });
         });
+
+        let login_type = "";
+        let join_type = "";
 
         function clickCheck(target) {
             document.querySelectorAll(`input[type=checkbox]`)
                 .forEach(el => el.checked = false);
+            login_type = target.value;
+            target.checked = true;
+        }
 
+        function clickCheck2(target) {
+            document.querySelectorAll(`input[type=checkbox]`)
+                .forEach(el => el.checked = false);
+            join_type = target.value;
             target.checked = true;
         }
     </script>
