@@ -1,5 +1,11 @@
 <?php
     session_start();
+    if (!isset($_SESSION['user_id'])) {
+        echo "<script>alert('로그인 후 이용하실 수 있습니다.'); location.href='/';</script>";
+    }
+?>
+<?php
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,31 +98,12 @@
                 </div>
             </div>
             <!-- 로그인 팝업 -->
-
-            <!-- 로고 -->
-            <span class='logo' style="width: 100%; padding-top: 40px; text-align: center;">
-                <div style="padding-bottom: 20px;" class="main-title">
-                    <p style="font-size: 48px;
-            font-family: 'Gaegu', cursive;">우리는!</p>
-                    <div>
-                        <p><span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">아</span>무에게나</p>
-                        <p><span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">과</span>외받지</p>
-                        <p>않는<span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">다</span>.</p>
-                    </div>
-                </div>
-            </span>
-            <!-- 로고 -->
-
-            <!-- top5 선생님 -->
-            <span class='teacher-view-link'>
-                <p>선생님 전체보기</p>
-            </span>
-            <div class='best-teachers'>
-                <div class='teacher'>
-
-                </div>
+            <div class='profile-picture'>
+                <form name="reqform" method="post" action="profile_picture.php" enctype="multipart/form-data">
+                    <input type="file" name="imgFile" /><br>
+                    <input type="submit" value="업로드" />
+                </form>
             </div>
-            <!-- top5 선생님 -->
         </main>
         <footer>
             <p style='font-size: 24px;'>contact us! <a href="">email</a> <a
