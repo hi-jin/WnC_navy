@@ -67,6 +67,7 @@
                 <div class='login-form con'>
                     <a href="javascript:;" class="close">X</a>
                     <div>
+                        <input type="text" placeholder="이름을 입력하세요.">
                         <input type="text" placeholder="아이디를 입력하세요.">
                         <input type="password" placeholder="비밀번호를 입력하세요.">
                         <div>
@@ -172,14 +173,15 @@
             $('#join').click((e) => {
                 e.preventDefault();
 
-                let uid = $('.con2 > div > div > input[type="text"]').val()
+                let uname = $('.con2 > div > div > input[type="text"]:eq(0)').val()
+                let uid = $('.con2 > div > div > input[type="text"]:eq(1)').val()
                 let upw = $('.con2 > div > div > input[type="password"]').val()
                 let utype = join_type;
-
                 $.ajax({
                     url: "/join.php",
                     type: "POST",
                     data: {
+                        uname: uname,
                         uid: uid,
                         upw: upw,
                         utype: utype

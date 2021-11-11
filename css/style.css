@@ -88,15 +88,18 @@ a:visited {
     left:50%;
     transform: translate(-50%,-50%);
     background-color:papayawhip;
+    width: 390px;
 }
 
 .login-form > button {
     width: 70px;
+    flex-shrink: 0;
 }
 
 .login-form > div {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
 .login-form > div > input {
@@ -106,10 +109,12 @@ a:visited {
 
 .login-form > div > button {
     flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .login-form > div > div {
     display: flex;
+    flex-shrink: 0;
 }
 
 .login-form > div > div > label {
@@ -119,6 +124,7 @@ a:visited {
     font-size: 24px;
     background-color: white;
     text-align: center;
+    flex-shrink: 0;
 }
 
 #modal{
