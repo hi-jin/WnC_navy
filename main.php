@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,13 @@
     <div class="main-container">
         <header>
             <div id='main-page-link'>아과다</div>
-            <div id='login-link'>로그인</div>
+            <?php
+                if (isset($_SESSION['user_id'])) {
+                    echo "<div id='logout-link'>로그아웃</div>";
+                } else {
+                    echo "<div id='login-link'>로그인</div>";
+                }
+            ?>
         </header>
         <main>
             <!-- 로그인 팝업 -->
@@ -96,6 +105,10 @@
             $("#modal, .close").on('click', function () {
                 $("#modal").fadeOut(300);
                 $(".modal-con").fadeOut(300);
+            });
+
+            $('#logout-link').click(() => {
+                location.href='logout.php';
             });
 
             $('#login').click((e) => {

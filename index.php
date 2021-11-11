@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (isset($_SESSION['user_id'])) {
+        echo "<script>location.href='/main.php';</script>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
