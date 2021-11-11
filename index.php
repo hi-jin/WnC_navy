@@ -78,7 +78,7 @@
             <p style='font-size: 24px;'>2. (todo)수강 전 과외 선생님과 채팅을 할 수 있습니다.</p>
         </main>
         <footer>
-            <p style='font-size: 24px;'>contact us! <a href="">email</a> <a href="">github</a></p>
+            <p style='font-size: 24px;'>contact us! <a href="">email</a> <a href="https://github.com/hi-jin/WnC_navy">github</a></p>
         </footer>
     </div>
     <script src="/script/jquery-3.6.0.js"></script>

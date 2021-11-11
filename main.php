@@ -80,7 +80,7 @@
             <!-- 로그인 팝업 -->
         </main>
         <footer>
-            <p style='font-size: 24px;'>contact us! <a href="crushed7@o.cnu.ac.kr">email</a> <a
+            <p style='font-size: 24px;'>contact us! <a href="">email</a> <a
                     href="https://github.com/hi-jin/WnC_navy">github</a></p>
         </footer>
     </div>
