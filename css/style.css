@@ -35,7 +35,7 @@ header {
 }
 
 main {
-    padding: 80px 30px;
+    padding: 80px 0px;
     height: 100%;
 }
 
@@ -152,6 +152,35 @@ a:visited {
     background-color:papayawhip;
   }
 
+.best-teachers {
+    padding: 0px 20px;
+    width: 100%;
+    height: 200px;
+    background-color: papayawhip;
+    white-space:nowrap;
+    overflow-x:scroll;    
+}
+
+.best-teachers::-webkit-scrollbar {
+    width: 20px; /*스크롤바의 너비*/
+}
+
+.best-teachers::-webkit-scrollbar-thumb {
+    background-color: papayawhip; /*스크롤바의 색상*/
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.best-teachers::-webkit-scrollbar-track {
+    background-color: white; /*스크롤바 트랙 색상*/
+}
+
+.teacher-view-link {
+    text-align: right;
+    font-size: 20px;
+}
 
 @media (max-width: 600px) {
     .main-title {

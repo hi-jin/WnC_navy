@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>아과다</title>
     <style>
+        @media (max-width: 600px) {
+
+            .logo {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -78,6 +84,31 @@
                 </div>
             </div>
             <!-- 로그인 팝업 -->
+
+            <!-- 로고 -->
+            <span class='logo' style="width: 100%; padding-top: 40px; text-align: center;">
+                <div style="padding-bottom: 20px;" class="main-title">
+                    <p style="font-size: 48px;
+            font-family: 'Gaegu', cursive;">우리는!</p>
+                    <div>
+                        <p><span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">아</span>무에게나</p>
+                        <p><span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">과</span>외받지</p>
+                        <p>않는<span style="font-size: 48px; font-family: 'Black Han Sans', sans-serif;">다</span>.</p>
+                    </div>
+                </div>
+            </span>
+            <!-- 로고 -->
+
+            <!-- top5 선생님 -->
+            <span class='teacher-view-link'>
+                <p>선생님 전체보기</p>
+            </span>
+            <div class='best-teachers'>
+                <div class='teacher'>
+
+                </div>
+            </div>
+            <!-- top5 선생님 -->
         </main>
         <footer>
             <p style='font-size: 24px;'>contact us! <a href="">email</a> <a
@@ -108,7 +139,7 @@
             });
 
             $('#logout-link').click(() => {
-                location.href='logout.php';
+                location.href = 'logout.php';
             });
 
             $('#login').click((e) => {
