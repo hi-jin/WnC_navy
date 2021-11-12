@@ -1,4 +1,3 @@
-<?php include  $_SERVER['DOCUMENT_ROOT']."root/workspace/db.php"; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,11 +30,13 @@
                     <th scope="row">등록일자</th>
                 </tr>
             </thead>
+            <tbody>
             <?php
              // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
              $db = mysqli_connect("localhost", "web", "1284", "web");   
-             $sql = "select * from board order by id desc limit 0,5"; 
-                    while($board = $db->query($sql)->fetch_array(MYSQLI_ASSOC))
+             $sql = "select * from board order by no desc limit 0,5"; 
+             $board_data = $db->query($sql);
+                    while($board = $board_data->fetch_array(MYSQLI_ASSOC))
                     {
                         //title변수에 DB에서 가져온 title을 선택
                         $title=$board["title"]; 
@@ -45,19 +46,18 @@
                             $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
                         }
             ?>
-            <tbody>
                 <tr>
                     <td>
-                        <?php echo $board['id']; ?>
+                        <?php echo $board['no']; ?>
                     </td>
                     <td>
                         <a href=""><?php echo $title;?></a>
                     </td>
                     <td>
-                        <?php echo $board['total']?>
+                        <?php echo $board['now_student']."/".$board['total_student']?>
                     </td>
                     <td>
-                        <?php echo $board['teacher']?>
+                        <?php echo $board['teacher_id']?>
                     </td>
                     <td>
                         <?php echo $board['regDate']?>
