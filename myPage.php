@@ -4,9 +4,6 @@
         echo "<script>alert('로그인 후 이용하실 수 있습니다.'); location.href='/';</script>";
     }
 ?>
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,9 +96,17 @@
             </div>
             <!-- 로그인 팝업 -->
             <div class='profile-picture'>
+                <?php
+                    if ($_SESSION['profile'] == 0) {
+                        echo '<img width="150px" src="/img/default_user.png" alt="">';
+                    } else {
+                        echo '<img width="150px" height="150px" src="/img/'.$_SESSION["user_type"].'/'.$_SESSION['user_id'].'.png" alt="">';
+                    }
+                ?>
                 <form name="reqform" method="post" action="profile_picture.php" enctype="multipart/form-data">
                     <input type="file" name="imgFile" /><br>
                     <input type="submit" value="업로드" />
+                    <input id='del-profile' type="button" value="프로필 사진 삭제" />
                 </form>
             </div>
         </main>
@@ -165,6 +170,23 @@
                 });
             });
 
+            $('#del-profile').click((e) => {
+                $.ajax({
+                    url: "delete_profile.php",
+                    type: "POST",
+                    data: {
+                        utype: "<?php echo $_SESSION['user_type'] ?>",
+                        uid: "<?php echo $_SESSION['user_id'] ?>"
+                    },
+                    success: (result) => {
+                        alert(result);
+                    },
+                    complete: () => {
+                        location.reload();
+                    }
+                });
+            });
+
             $('#join').click((e) => {
                 e.preventDefault();
 
@@ -185,9 +207,8 @@
                         if (result == "회원가입이 완료되었습니다.") {
                             location.href = "/main.php";
                         }
-                        alert(result);
                     },
-                    error: (err) => {
+                    error: (request, status, error) => {
                         alert(err);
                     }
                 });

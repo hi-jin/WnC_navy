@@ -1,11 +1,12 @@
 <?php
+session_start();
     /*********************************************
 * 넘어오는 데이터가 정상인지 검사하기 위한 절차
 * 실제 페이지에서는 적용 X
 **********************************************/
 
 //$_FILES에 담긴 배열 정보 구하기.
-var_dump($_FILES);
+// var_dump($_FILES);
 
 // php 내부 소스에서 html 태그 적용 - 선긋기
 echo "<hr>";
@@ -49,20 +50,25 @@ $extStatus = false;
         // 허용할 확장자를 jpg, bmp, gif, png로 정함, 그 외에는 업로드 불가
         if($extStatus){
             // 임시 파일 옮길 디렉토리 및 파일명
-            if ($_SESSION['user_type'] == "teacher") {
-                $resFile = "./img/teachers/{$_FILES['imgFile']['name']}";
-            } else if ($_SESSION['user_type'] == "student") {
-                $resFile = "./img/teachers/{$_FILES['imgFile']['name']}";
-            } else {
-                $resFile = "./img/{$_FILES['imgFile']['name']}";
-            }
+            // $resFile = "./img/{$_FILES['imgFile']['name']}";
+            $resFile = "./img/".$_SESSION['user_type']."/".$_SESSION['user_id'].".png";
             // 임시 저장된 파일을 우리가 저장할 디렉토리 및 파일명으로 옮김
+            unlink("img/$utype/$uid.png");
             $imageUpload = move_uploaded_file($tempFile, $resFile);
             
             // 업로드 성공 여부 확인
             if($imageUpload == true){
-                echo "파일이 정상적으로 업로드 되었습니다. <br>";
-                echo "<img src='{$resFile}' width='100' />";
+                $db = mysqli_connect("localhost", "web", "1284", "web");
+                // $sql = "update "+$_SESSION['user_type']+" set profile = 'True' where id='"+$_SESSION['user_id']+"'";
+                $sql = "update ".$_SESSION['user_type']." set profile = '1' where id='".$_SESSION['user_id']."'";
+                $result = $db->query($sql);
+                if ($result) {
+                    $_SESSION['profile'] = 1;
+                    echo "파일이 정상적으로 업로드 되었습니다.";
+                    echo "<script>location.href = '/myPage.php';</script>";
+                } else { 
+                    echo "파일 업로드에 실패하였습니다.";
+                }
             }else{
                 echo "파일 업로드에 실패하였습니다.";
             }
