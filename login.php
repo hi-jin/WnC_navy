@@ -11,7 +11,7 @@
         echo "선생님/학생 중 하나를 선택해주세요.";
     }
 
-    $db = mysqli_connect('localhost', 'web', '1284', 'web');
+    $db = mysqli_connect('localhost', 'root', '1284', 'web');
     
     if ($utype == "teacher") {
         $id_sql = "select id from teacher where id='$uid'";

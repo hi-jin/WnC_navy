@@ -50,7 +50,6 @@ table {
 	display: grid;
 	place-items: center;
 	min-height: 100vh;
-	background: #301e4e;
   }
   
   .content {
@@ -58,5 +57,4 @@ table {
 	font-size: 2rem;
 	padding: 3rem;
 	border-radius: 1rem;
-	background: #ff6e6c;
   }

@@ -14,7 +14,7 @@
     } else if ($utype == null) {
         echo "선생님/학생 중 하나를 선택해주세요.";
     } else{
-        $db = mysqli_connect('localhost', 'web', '1284', 'web');
+        $db = mysqli_connect('localhost', 'root', '1284', 'web');
         $teacher_id_check_sql = "select id from teacher where id = '$uid'";
         $teacher_id_check = $db->query($teacher_id_check_sql);
         if ($teacher_id_check->num_rows==1) {

@@ -34,7 +34,7 @@
             <tbody>
             <?php
              // board테이블에서 no를 기준으로 내림차순해서 10개까지 표시
-             $db = mysqli_connect("localhost", "web", "1284", "web");   
+             $db = mysqli_connect("localhost", "root", "1284", "web");   
              $sql = "select * from board order by no desc limit 0,10"; 
              $board_data = $db->query($sql);
                     while($board = $board_data->fetch_array(MYSQLI_ASSOC))
@@ -69,6 +69,8 @@
             </table>
             <div id="write_btn">
                 <a href="write.php"><button>모집 공고 등록</button></a>
+		&nbsp;
+		<a href="main.php"><button>홈으로 가기</button></a>
             </div>
         </div>
     </body>

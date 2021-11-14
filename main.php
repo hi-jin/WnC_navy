@@ -114,11 +114,8 @@
             
             <div class='best-teachers'>
                 <div class='teacher'>
-
                 </div>
-                <div class='wrapper'>
-                    <div class='content'><a href='board.php'>모집 게시판으로 이동</a></div>
-            </div>
+                <p class='songyi'><a href='board.php'>모집 게시판으로 이동</a></p>
             </div>
             
             <!-- top5 선생님 -->
