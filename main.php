@@ -109,13 +109,18 @@
 
             <!-- top5 선생님 -->
             <span class='teacher-view-link'>
-                <p>선생님 전체보기</p>
+                <p><a href="Teacher_list.html">선생님 전체보기</a></p>
             </span>
+            
             <div class='best-teachers'>
                 <div class='teacher'>
 
                 </div>
+                <div class='wrapper'>
+                    <div class='content'><a href='board.php'>모집 게시판으로 이동</a></div>
             </div>
+            </div>
+            
             <!-- top5 선생님 -->
         </main>
         <footer>
@@ -200,7 +205,7 @@
                         }
                         alert(result);
                     },
-                    error: (err) => {
+                    error: (request, status, err) => {
                         alert(err);
                     }
                 });

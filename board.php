@@ -4,6 +4,7 @@
         <meta charset = "utf-8">
         <title>게시판</title>
         <link rel="stylesheet" type="text/css" href="/css/board.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
     </head>
     <body>
         <div id="board_area">
@@ -32,9 +33,9 @@
             </thead>
             <tbody>
             <?php
-             // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
+             // board테이블에서 no를 기준으로 내림차순해서 10개까지 표시
              $db = mysqli_connect("localhost", "web", "1284", "web");   
-             $sql = "select * from board order by no desc limit 0,5"; 
+             $sql = "select * from board order by no desc limit 0,10"; 
              $board_data = $db->query($sql);
                     while($board = $board_data->fetch_array(MYSQLI_ASSOC))
                     {
@@ -67,7 +68,7 @@
             </tbody>
             </table>
             <div id="write_btn">
-                <a href="/root/workspace/write.php"><button>글작성</button></a>
+                <a href="write.php"><button>모집 공고 등록</button></a>
             </div>
         </div>
     </body>

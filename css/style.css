@@ -164,7 +164,8 @@ a:visited {
     height: 200px;
     background-color: papayawhip;
     white-space:nowrap;
-    overflow-x:scroll;    
+    overflow-x:scroll;   
+    text-align: center; 
 }
 
 .best-teachers::-webkit-scrollbar {
@@ -207,3 +208,14 @@ a:visited {
         margin-right: 20px;
     }
 }
+.wrapper {
+    text-align: center;
+  }
+  
+  .content {
+    font-family: system-ui, serif;
+    font-size: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background: #ff6e6c;
+  }
